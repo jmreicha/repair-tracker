@@ -23,6 +23,7 @@ SECRET_KEY = '2(o#(&u8-^7r3gi&@6(h+0jikh04gx^%vj3cbl&@x@i&4%u(rm'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 ALLOWED_HOSTS = []
 
@@ -36,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'customers',
+	'south'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,8 +60,12 @@ WSGI_APPLICATION = 'repair_tracker_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'repair_tracker',
+		'USER': 'djangoadmin',
+		'PASSWORD': 'djangotest',
+		'HOST': '',
+		'PORT': '',
     }
 }
 
@@ -67,7 +74,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
