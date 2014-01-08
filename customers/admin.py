@@ -1,5 +1,5 @@
 from django.contrib import admin
-from customers.models import Customer,RepairDetail, DeviceDetail
+from customers.models import Customer, RepairDetail, DeviceDetail
 
 # Register your models here.
 
