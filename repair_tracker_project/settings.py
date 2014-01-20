@@ -25,6 +25,12 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
+# Django Debug Toolbar
+DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False,}
+
+# Internal IP's for Django Debug Toolbar
+INTERNAL_IPS = ('127.0.0.1', '63.86.214.224')
+
 ALLOWED_HOSTS = []
 
 
@@ -37,8 +43,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'debug_toolbar',
 	'customers',
-	'south'
+	'south',
+	'localflavor'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,6 +56,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'repair_tracker_project.urls'
@@ -87,3 +96,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'

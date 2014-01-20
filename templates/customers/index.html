@@ -1,0 +1,10 @@
+{% extends "customers/base.html" %}
+
+{% block content %}
+<h1>Customer Details</h1>
+<ul>
+	{% for c in Customer %}
+	<li>{{ c.first_name }}|{{ c.last_name }}</li>
+	{% endfor %}
+</ul>
+{% endblock content %}

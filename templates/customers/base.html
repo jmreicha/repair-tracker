@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css" type="text/css" />
+    <title>{% block title %}Mobile Repair Tracker{% endblock title %}</title>
+</head>
+
+<body>
+    <div id="containter">{% block container %} 
+        <div id="header">{% block header %}{% endblock header %}</div>
+        <div id="content">{% block content %}{% endblock content %}</div>
+        <div id="sidebar">{% block sidebar %}{% endblock sidebar %}</div>
+        <div id="footer">{% block footer %}{% endblock footer %}</div>
+    {% endblock container %}</div>
+</body>
+</html>

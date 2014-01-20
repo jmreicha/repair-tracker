@@ -1,0 +1,11 @@
+{% extends "customers/base.html" %}
+
+{% block content %}
+    <h1>Customer Info</h1>
+        <div id=customer>
+            <p>Name: {{cust.first_name}} {{cust.last_name}}</p>
+            <p>Address: {{cust.address}}</p>
+            <p>Phone Number: {{cust.phone_number}}</p>
+            <p>Email: {{cust.email}}</p>
+        </div>
+{% endblock content%}
